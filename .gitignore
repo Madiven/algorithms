@@ -5,3 +5,5 @@ bin/*
 /target/*
 .classpath
 .project
+/lib
+lib/*
