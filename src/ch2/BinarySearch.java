@@ -20,6 +20,22 @@ public class BinarySearch {
 		}
 	}
 	
+	public static int search2(int[] a, int k) {
+		int lo = 0, hi = a.length - 1;
+		int mi = 0;
+		while (lo <= hi) {
+			mi = (lo + hi) / 2;
+			if (k < a[mi]) {
+				hi = mi - 1;
+			} else if (k > a[mi]) {
+				lo = mi + 1;
+			} else {
+				return mi;
+			}
+		}
+		return -1;
+	}
+	
 	public static void main(String[] args) {
 		Random random = new Random();
 		int n = 10;
@@ -30,7 +46,7 @@ public class BinarySearch {
 		MergeSort.sort(a);
 		Sorts.show(a);
 		System.out.println("---------------");
-		System.out.println(search(a, 5));
+		System.out.println(search2(a, 5));
 	}
 
 }
